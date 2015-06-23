@@ -10,13 +10,14 @@ static gboolean delete_event(GtkWidget *widget, GdkEvent *event,
 void add_button() {
 	char *a;
 	a[0] = '1';
+	// Hi Git History
 	for (int i = 1; i <= 9; i++) {
 		a[0] += (i - 1);
 		GtkWidget *numbtn = gtk_button_new_with_label(a);
 //		g_signal_connect(numbtn, "clicked", G_CALLBACK (callback),
 //				(gpointer ) "button 2");
-		gtk_table_attach_defaults(GTK_TABLE(table), numbutton, 1, 2, 0, 1);
-		gtk_widget_show (numbutton);
+//		gtk_table_attach_defaults(GTK_TABLE(table), numbtn, 1, 2, 0, 1);
+//		gtk_widget_show (numbtn);
 	}
 
 //    button = gtk_button_new_with_label ("button 2");
