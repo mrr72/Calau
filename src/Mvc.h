@@ -47,6 +47,7 @@ public:
 	virtual ~Control();
 	void setview(View* view);
 	void handle_entry(char* input);
+	void backspace();
 //	void reset();
 //	void save();
 //	void show_save();

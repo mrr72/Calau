@@ -9,6 +9,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
+
+using namespace std;
+
 
 Control::Control() {
 	state = 0;
@@ -85,7 +89,18 @@ int Control::eval() {
 		break;
 	}
 }
-
+void Control::backspace(){
+	if(state==0){
+		first_num[strlen(first_num)-1] = '\0';
+		view->entry_set_text(first_num);
+	}else{
+		second_num[strlen(second_num)-1] = '\0';
+		view->entry_set_text(first_num);
+		char temp[3] = {' ',opt,' '};
+		view->append_to_entry(temp);
+		view->append_to_entry(second_num);
+	}
+}
 void Control::handle_entry(char* input) {
 	short int instate = whatis(input);
 	printf("%d\n", instate);

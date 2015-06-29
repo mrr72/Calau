@@ -55,7 +55,10 @@ bool View::enter_callback(GtkEntry *entry,GdkEventKey *event, gpointer user_data
 
 	Control* iii = (Control*)user_data;
 		iii->handle_entry(event->string);
-		printf("Entry contents: %s\n", event->string);
+		if(event->keyval == 65288){
+			iii->backspace();
+		}
+		printf("Entry contents: %d -- %s \n", event->keyval,event->string);
 	return true;
 }
 
