@@ -1,16 +1,21 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
-#include<iostream>
+#include <iostream>
+#include <stdio.h>
 #include "Mvc.h"
-#include "Control.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-//	View a(&argc,&argv);
-	char a[20];
-	sprintf(a, "%i", 1222);
-	cout << a;
-	cout <<"heelll";
+	Control c;
+	IControl* ic = &c;
+	View v(&argc, &argv,ic);
+	c.setview(&v);
+	v.runview();
 	return 0;
+//	View* view;
+//	Control a(view);
+//
+	//
+//
 }
