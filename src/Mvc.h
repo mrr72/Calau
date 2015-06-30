@@ -27,6 +27,13 @@ public:
 	void runview();
 	static gboolean numberbtn_callback(GtkWidget *numbtn,
 			gpointer callback_data);
+	static gboolean reset_callback(GtkWidget *numbtn,
+			gpointer callback_data);
+	static gboolean memo_callback(GtkWidget *numbtn,
+			gpointer callback_data);
+	static gboolean showmemo_callback(GtkWidget *numbtn,
+			gpointer callback_data);
+
 	gboolean delete_event(GtkWidget *widget, GdkEvent *event, gpointer data);
 	static bool enter_callback(GtkEntry *entry, GdkEventKey *event,
 			gpointer user_data);
@@ -35,10 +42,19 @@ public:
 	void append_to_entry(char* text);
 	void clear_entry();
 	void entry_set_text(char* text);
+	void add_to_history_command(char* texr);
 
 private:
 	GtkWidget *entry;
 	IControl* icontrol;
+
+	//	text view control
+
+	GtkWidget* textArea;
+	GtkTextBuffer *buffer;
+	GtkTextIter iter;
+
+
 };
 
 class Control : public IControl {
@@ -48,9 +64,9 @@ public:
 	void setview(View* view);
 	void handle_entry(char* input);
 	void backspace();
-//	void reset();
-//	void save();
-//	void show_save();
+	void reset();
+	void save();
+	void show_save();
 //	void memory_dump();
 
 private:
@@ -62,6 +78,7 @@ private:
 	char opt;
 	char* first_num;
 	char* second_num;
+	char* memory;
 };
 
 #endif /* MVC_H_ */
