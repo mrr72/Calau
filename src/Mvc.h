@@ -10,10 +10,6 @@
 class IControl {
 public:
 	virtual void handle_entry(char* input)=0;
-//	virtual void reset()=0;
-//	virtual void save()=0;
-//	virtual void show_save()=0;
-//	virtual void memory_dump()=0;
 };
 
 
@@ -67,7 +63,6 @@ public:
 	void reset();
 	void save();
 	void show_save();
-//	void memory_dump();
 
 private:
 	View* view;

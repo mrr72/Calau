@@ -53,16 +53,12 @@ short int Control::whatis(char* i) {
 }
 
 char* Control::append(char* a, char* b) {
-//	printf("a: %s\n", a);
-//	printf("b: %s\n", b);
 	size_t len = strlen(a);
 	char* ret = new char[len + 2];
 	strcpy(ret, a);
 	ret[len] = b[0];
 	ret[len + 1] = '\0';
 	return ret;
-//	strcat(a,b);
-//return strcat(a, b);
 }
 
 int Control::eval() {
@@ -75,19 +71,19 @@ int Control::eval() {
 	printf("eval %d \n", opt);
 	switch (opt) {
 	case '+':
-		printf("%s + %s \n", first_num, second_num);
+//		printf("%s + %s \n", first_num, second_num);
 		return atoi(first_num) + atoi(second_num);
 		break;
 	case '-':
-		printf("%s - %s \n", first_num, second_num);
+//		printf("%s - %s \n", first_num, second_num);
 		return atoi(first_num) - atoi(second_num);
 		break;
 	case '*':
-		printf("%s * %s \n", first_num, second_num);
+//		printf("%s * %s \n", first_num, second_num);
 		return atoi(first_num) * atoi(second_num);
 		break;
 	case '/':
-		printf("%s / %s \n", first_num, second_num);
+//		printf("%s / %s \n", first_num, second_num);
 		return atoi(first_num) / atoi(second_num);
 		break;
 	default:
