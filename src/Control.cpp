@@ -165,6 +165,7 @@ void Control::handle_entry(char* input) {
 			sprintf(res, "%d", result);
 			strcpy(first_num, res);
 			second_num = "";
+			//
 			state = 1;
 			opt = input[0];
 			view->entry_set_text(res);
