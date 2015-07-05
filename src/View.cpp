@@ -20,7 +20,6 @@ View::View(int*argc, char***argv, IControl* c) {
 	g_signal_connect(window, "delete-event", G_CALLBACK (&View::delete_event),
 			NULL);
 	gtk_container_set_border_width(GTK_CONTAINER(window), 10);
-
 	/* Create a 2x2 table */
 	table = gtk_table_new(17, 13, TRUE);
 	entry = gtk_entry_new();
